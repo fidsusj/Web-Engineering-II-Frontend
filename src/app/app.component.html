@@ -23,6 +23,7 @@
 <br />
 <p>Own Pipe: {{"Test" | yell: "???" | uppercase}}</p>
 <br />
-<app-todo [todo]="myTodo"></app-todo>
+<!-- bzw. eigentlich [color]="'red'" unten nur vereinfachte Schreibweise-->
+<app-todo appTest appClickHandler color="red" [todo]="myTodo" (done)="onDone($event)"></app-todo>
 
 <router-outlet></router-outlet>

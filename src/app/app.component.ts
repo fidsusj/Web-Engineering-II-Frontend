@@ -21,4 +21,8 @@ export class AppComponent {
     this.color = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
   }
 
+  onDone(evt: any) {
+    alert(evt.name);
+  }
+
 }

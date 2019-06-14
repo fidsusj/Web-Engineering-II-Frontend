@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { YellPipe } from './yell.pipe';
 import { TodoComponent } from './todo/todo.component';
+import { TestDirective } from './test.directive';
+import { ClickHandlerDirective } from './click-handler.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     YellPipe,
-    TodoComponent
+    TodoComponent,
+    TestDirective,
+    ClickHandlerDirective
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -7,11 +7,25 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   @Input()
-  private todo: object;
+  public todo: object;
+  @Output()
+  public done = new EventEmitter<any>();
+  @HostBinding('class.foo')
+  doneState = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onDone() {
+    // oder this.done.emit(this.todo);
+    this.done.next(this.todo);
+  }
+
+  @HostListener('click')
+  onHostClick() {
+    this.doneState = !this.doneState;
   }
 
 }
