@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class YellPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return args ? value + args : value + '!!!';
+  transform(value: string, args?: string): string {
+    return `${value}${args || '!!!'}`;
   }
 
 }
