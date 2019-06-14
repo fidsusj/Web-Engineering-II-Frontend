@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { YellPipe } from './yell.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    YellPipe
   ],
   imports: [
     BrowserModule,
