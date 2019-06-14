@@ -10,6 +10,7 @@ export class AppComponent {
   value = 'Hellcat';
   color = 'red';
   number = 12345.6789;
+  myTodo = {name: 'Wash clothes', done: false, id: 3};
 
   handleClick({clientX, clientY}: MouseEvent) {
     console.log('Hello');
