@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {InjectionToken, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +7,7 @@ import { YellPipe } from './yell.pipe';
 import { TodoComponent } from './todo/todo.component';
 import { TestDirective } from './test.directive';
 import { ClickHandlerDirective } from './click-handler.directive';
+import {APP_NAME} from './appname';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ClickHandlerDirective } from './click-handler.directive';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: APP_NAME, useValue: 'My App'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
