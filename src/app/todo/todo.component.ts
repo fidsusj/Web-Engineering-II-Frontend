@@ -8,15 +8,12 @@ import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outpu
 export class TodoComponent implements OnInit {
   @Input()
   public todo: object;
+
   @Output()
   public done = new EventEmitter<any>();
+
   @HostBinding('class.foo')
   doneState = false;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   onDone() {
     // oder this.done.emit(this.todo);
@@ -26,6 +23,9 @@ export class TodoComponent implements OnInit {
   @HostListener('click')
   onHostClick() {
     this.doneState = !this.doneState;
+  }
+
+  ngOnInit(): void {
   }
 
 }

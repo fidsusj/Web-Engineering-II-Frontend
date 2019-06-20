@@ -10,6 +10,4 @@ export class TestDirective {
   @HostBinding('style.color')
   color: string;
 
-  constructor() { }
-
 }

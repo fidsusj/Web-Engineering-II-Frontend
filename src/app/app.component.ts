@@ -1,5 +1,4 @@
-import {Component, ElementRef, Inject} from '@angular/core';
-import {APP_NAME} from './appname';
+import {Component, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,27 +6,24 @@ import {APP_NAME} from './appname';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoApp';
   value = 'Hellcat';
   color = 'red';
-  number = 12345.6789;
+  number = 12.3456789;
   myTodo = {name: 'Wash clothes', done: false, id: 3};
 
-  constructor(@Inject(APP_NAME) name: string, ref: ElementRef) {
-    console.log(name);
+  constructor(ref: ElementRef) {
     console.log(ref);
   }
 
-  handleClick({clientX, clientY}: MouseEvent) {
-    console.log('Hello');
-    console.log(`${clientX} ${clientY}`);
+  handleClick({clientX, clientY}: MouseEvent): void {
+    alert(`xPos: ${clientX}, yPos: ${clientY}`);
   }
 
-  handleHover() {
+  handleHover(): void {
     this.color = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
   }
 
-  onDone(evt: any) {
+  onDone(evt: any): void {
     alert(evt.name);
   }
 

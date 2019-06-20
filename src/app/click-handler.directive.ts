@@ -5,9 +5,6 @@ import {Directive, HostListener, Input} from '@angular/core';
 })
 export class ClickHandlerDirective {
 
-  constructor() { }
-
-  @Input()
   @HostListener('click')
   handleClick() {
     console.log('Click directive triggered');

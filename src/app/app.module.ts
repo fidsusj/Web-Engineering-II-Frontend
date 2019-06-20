@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {InjectionToken, NgModule} from '@angular/core';
+import {Inject, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,4 +24,8 @@ import {APP_NAME} from './appname';
   providers: [{provide: APP_NAME, useValue: 'My App'}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(@Inject(APP_NAME) name: string) {
+    console.log(name);
+  }
+}
