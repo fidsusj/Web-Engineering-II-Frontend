@@ -1,4 +1,5 @@
 import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output} from '@angular/core';
+import {Todo} from '../todo';
 
 @Component({
   selector: 'app-todo',
@@ -7,7 +8,7 @@ import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Outpu
 })
 export class TodoComponent implements OnInit {
   @Input()
-  public todo: object;
+  public todo: Todo;
 
   @Output()
   public done = new EventEmitter<any>();
