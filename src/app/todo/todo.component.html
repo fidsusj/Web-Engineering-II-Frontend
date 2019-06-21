@@ -1,2 +1,7 @@
 <p>Input from app component to todo component: {{todo | json}}</p>
 <button (click)="onDone()">done</button>
+
+<label>
+  <input type="checkbox" [checked]="todo.done"/>
+  {{todo.name}}
+</label>

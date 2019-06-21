@@ -8,6 +8,8 @@ import { TodoComponent } from './todo/todo.component';
 import { TestDirective } from './test.directive';
 import { ClickHandlerDirective } from './click-handler.directive';
 import {APP_NAME} from './appname';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {APP_NAME} from './appname';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{provide: APP_NAME, useValue: 'My App'}],
   bootstrap: [AppComponent]

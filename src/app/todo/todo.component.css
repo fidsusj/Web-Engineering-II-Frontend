@@ -1,3 +1,7 @@
 :host.foo {
   text-decoration: line-through;
 }
+
+:host{
+  display: block;
+}

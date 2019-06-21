@@ -3,12 +3,15 @@
 <h3>Data Binding</h3>
 <p>{{ "Hello" }}</p>
 <p>{{ value }}</p>
+<hr />
 
 <h3>Property Binding</h3>
 <div [style.backgroundColor]="color">The color of this text is {{ color }}.</div>
+<hr />
 
 <h3>Event Binding</h3>
 <button (click)="handleClick($event)" (mousemove)="handleHover()">Click me</button>
+<hr />
 
 <h3>Pipes</h3>
 <p>{{value | uppercase }}</p>
@@ -16,10 +19,39 @@
 <p>{{number | currency: 'EUR' }}</p>
 <p>{{number | number: '0.3'}}</p>
 <p>Own Pipe: {{"Test" | yell: "???" | uppercase}}</p>
+<hr />
 
-<h3>Components</h3>
+<h3>Components And Directives</h3>
 <!-- bzw. eigentlich [color]="'red'" unten nur vereinfachte Schreibweise-->
 <app-todo appTest appClickHandler color="red" [todo]="myTodo" (done)="onDone($event)"></app-todo>
+<hr />
+
+<h3>Structural Directives</h3>
+<h4>ngIf</h4>
+<button (click)="toggle()">Toggle</button>
+<ng-container *ngIf="show">
+  <p>I'm visible</p>
+</ng-container>
+
+<h4>ngFor</h4>
+<ol>
+  <ng-container *ngFor="let todo of todos$ | async">
+    <li>{{todo.name}}</li>
+  </ng-container>
+</ol>
+
+<h4>ngFor with todo component</h4>
+<ng-container *ngFor="let todo of todos$ | async">
+  <app-todo [todo]="todo"></app-todo>
+</ng-container>
+<hr />
+
+<h3>RxJS, Observables, Two Way Binding</h3>
+<form (ngSubmit)="onSubmit()">
+  <input type="text" name="title" [(ngModel)]="title"/>
+  <button>Hinzufügen</button>
+</form>
+<hr />
 
 <h3>Other</h3>
 <router-outlet></router-outlet>
